@@ -20,8 +20,8 @@ class TestCart(unittest.TestCase):
         cart.add_dvd(dvd)
         
         # Test 1: 100 -> giảm 20% = 80
-        self.assertEqual(cart.total_cost(percent=20), 80.0)
+        self.assertEqual(cart.total_cost_with_discount(20), 80.0)
         
         # Test 2: percent 150 -> ValueError
         with self.assertRaises(ValueError):
-            cart.total_cost(percent=150)
+            cart.total_cost_with_discount(150)
